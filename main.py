@@ -59,6 +59,14 @@ def main():
                 print("Game Over!")
                 sys.exit()
 
+        for Asteroid_shot_check in asteroids:
+            for shot in shots:
+                if(Asteroid_shot_check.collides_with(shot)):
+                    log_event("asteroid_shot")
+                    Asteroid_shot_check.split()
+                    shot.kill()
+                    
+
 
 if __name__ == "__main__":
     main()
